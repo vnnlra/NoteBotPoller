@@ -92,13 +92,14 @@ Oppure usando Maven/Gradle se configurato.
 
 ```
     lib/
-     └── TelegramJsonParser.jar
+     ├── TelegramJsonParser.java
+     └── TelegramMessage.java
     src/
      ├── Main.java
      ├── BotServer.java
      └── NoteBot.java
-    offset.htxt
-    notes_<chatId>.txt     (generati automaticamente)
+    offset.txt             (generato automaticamente)
+    notes_<chatId>.txt     (generato automaticamente)
 ```
 
 ---
