@@ -11,7 +11,7 @@ L’applicazione non accetta connessioni in ingresso: funziona interamente come 
 Il progetto è composto da tre classi principali:
 
 ### **1. Main.java**
-- Avvia il server.
+- Avvia il poller.
 - Contiene il token del bot.
 - Esegue un ciclo infinito chiamando `processOneBatch()` ogni 2 secondi per interrogare l’API.
 
@@ -127,5 +127,8 @@ Il progetto permette di comprendere:
 ---
 
 ## 📜 Licenza
+
+MIT
+
 
 MIT
