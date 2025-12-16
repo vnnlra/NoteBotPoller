@@ -1,7 +1,7 @@
 # 📒 NoteBot – Blocco note tramite Telegram Bot
 
 ## 📌 Descrizione del progetto
-NoteBot è un semplice server applicativo scritto in **Java** che permette di gestire un blocco note tramite un **bot Telegram**.  
+NoteBot è un semplice applicativo scritto in **Java** che permette di gestire un blocco note tramite un **bot Telegram**.  
 L’applicazione non accetta connessioni in ingresso: funziona interamente come **client HTTP** che interroga periodicamente la Bot API di Telegram usando il metodo `getUpdates`, interpreta i messaggi ricevuti e risponde con `sendMessage`.
 
 ---
