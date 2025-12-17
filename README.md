@@ -120,7 +120,7 @@ Questa scelta permette di:
 - comprendere i limiti di un parsing manuale.
 
 📄 **Documentazione dettagliata:**  
-[`docs/Documentazione_Parser_Telegram.md`](docs/Documentazione_Parser_Telegram.md)
+[`docs/parser_json_doc.md`](docs/Documentazione_Parser_Telegram.md)
 
 ---
 
