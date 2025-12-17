@@ -101,6 +101,28 @@ Oppure usando Maven/Gradle se configurato.
     offset.txt             (generato automaticamente)
     notes_<chatId>.txt     (generato automaticamente)
 ```
+---
+
+## 🔍 Parsing del JSON di Telegram
+
+Il progetto **non utilizza librerie JSON esterne** (come Gson o Jackson).  
+Il parsing delle risposte JSON restituite dalla Bot API di Telegram è gestito tramite
+una **libreria interna minimale**, pensata con scopo didattico.
+
+La libreria è composta da:
+
+- `TelegramMessage` → rappresenta un messaggio estratto da un update
+- `TelegramJsonParser` → estrae i messaggi testuali dal JSON di `getUpdates`
+
+Questa scelta permette di:
+- ridurre le dipendenze del progetto;
+- analizzare in modo diretto la struttura del JSON;
+- comprendere i limiti di un parsing manuale.
+
+📄 **Documentazione dettagliata:**  
+[`docs/Documentazione_Parser_Telegram.md`](docs/Documentazione_Parser_Telegram.md)
+
+---
 
 ---
 
