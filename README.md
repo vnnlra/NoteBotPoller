@@ -12,7 +12,7 @@ Il progetto è composto da tre classi principali:
 
 ### **1. Main.java**
 - Avvia il poller.
-- Contiene il token del bot.
+- Legge il token del bot da un file di testo esterno (`token.txt`).
 - Esegue un ciclo infinito chiamando `processOneBatch()` ogni 2 secondi per interrogare l’API.
 
 ### **2. BotServer.java**
@@ -76,13 +76,51 @@ In questo modo il bot non risponde due volte agli stessi messaggi.
 
 ---
 
+## 🔐 Gestione del token del bot
+
+Per motivi di **sicurezza** e di **versionamento del codice**, il token del bot Telegram **non è incluso nel codice sorgente**.
+
+Il programma legge il token da un file di testo esterno chiamato:
+
+```
+token.txt
+```
+
+Il file deve contenere **solo il token**, ad esempio:
+
+```
+123456789:AAEsempioTokenFornitoDaBotFather
+```
+
+All’avvio dell’applicazione, la classe `Main`:
+- legge il contenuto del file `token.txt`;
+- passa il token al `BotServer`;
+- termina il programma mostrando un messaggio di errore se il file non esiste o non è leggibile.
+
+Questa scelta permette di:
+- evitare la pubblicazione accidentale del token su GitHub;
+- separare configurazione e codice;
+- semplificare l’uso del progetto in laboratorio o su più macchine.
+
+👉 **Il file `token.txt` non deve essere versionato**.
+
+---
+
+## 📄 `.gitignore` (consigliato)
+
+Si consiglia di aggiungere al file `.gitignore` la seguente riga:
+
+```
+token.txt
+```
+
+---
+
 ## ▶️ Avvio
 
 1. Creare un bot con **BotFather** e ottenere il token.
-2. Inserire il token in `Main.java`.
-3. Eseguire il progetto da IntelliJ:
-
-Oppure usando Maven/Gradle se configurato.
+2. Creare un file `token.txt` nella directory principale del progetto e inserirvi il token.
+3. Eseguire il progetto da IntelliJ (o da riga di comando se configurato).
 
 4. Scrivere al bot su Telegram!
 
@@ -91,16 +129,18 @@ Oppure usando Maven/Gradle se configurato.
 ## 📂 Struttura del progetto
 
 ```
-    lib/
-     ├── TelegramJsonParser.java
-     └── TelegramMessage.java
-    src/
-     ├── Main.java
-     ├── BotServer.java
-     └── NoteBot.java
-    offset.txt             (generato automaticamente)
-    notes_<chatId>.txt     (generato automaticamente)
+lib/
+ ├── TelegramJsonParser.java
+ └── TelegramMessage.java
+src/
+ ├── Main.java
+ ├── BotServer.java
+ └── NoteBot.java
+token.txt              (da creare manualmente, NON versionato)
+offset.txt             (generato automaticamente)
+notes_<chatId>.txt     (generato automaticamente)
 ```
+
 ---
 
 ## 🔍 Parsing del JSON di Telegram
@@ -120,9 +160,7 @@ Questa scelta permette di:
 - comprendere i limiti di un parsing manuale.
 
 📄 **Documentazione dettagliata:**  
-[`docs/parser_json_doc.md`](docs/parser_json_doc.md)
-
----
+`docs/parser_json_doc.md`
 
 ---
 
@@ -149,8 +187,5 @@ Il progetto permette di comprendere:
 ---
 
 ## 📜 Licenza
-
-MIT
-
 
 MIT
