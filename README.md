@@ -137,8 +137,8 @@ src/
  ├── BotServer.java
  └── NoteBot.java
 token.txt              (da creare manualmente, NON versionato)
-offset.txt             (generato automaticamente)
-notes_<chatId>.txt     (generato automaticamente)
+offset.txt             (generato automaticamente, NON versionare)
+notes_<chatId>.txt     (generato automaticamente, NON versionare)
 ```
 
 ---
